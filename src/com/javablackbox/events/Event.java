@@ -8,7 +8,7 @@ public interface Event {
 	// Every event has an ID, Timestamp, Name and Category
 	UUID getId();
 	
-	Instant GetTimeStamp();
+	Instant getTimeStamp();
 	
 	String getName();
 	
