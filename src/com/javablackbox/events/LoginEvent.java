@@ -1,6 +1,6 @@
 package com.javablackbox.events;
 
-public class LoginEvent extends AbstractEvent {
+public class LoginEvent extends AbstractEvent implements Event {
 	
 	private final String username;
 	
