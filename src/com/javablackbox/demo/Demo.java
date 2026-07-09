@@ -2,20 +2,23 @@ package com.javablackbox.demo;
 
 import com.javablackbox.events.LoginEvent;
 import com.javablackbox.recorder.EventRecorder;
+import com.javablackbox.replay.ReplayEngine;
 
 public class Demo {
 
     public static void main(String[] args) {
 
-        EventRecorder recorder = new EventRecorder();
+    	EventRecorder recorder = new EventRecorder();
 
-        LoginEvent login = new LoginEvent("Sam");
+    	recorder.record(new LoginEvent("Sam"));
+    	recorder.record(new LoginEvent("Alice"));
+    	recorder.record(new LoginEvent("Charlie"));
 
-        recorder.record(login);
+    	ReplayEngine replay = new ReplayEngine(recorder);
 
-        System.out.println(login);
-
-        System.out.println(recorder.getEvents());
+    	System.out.println("=== Replay Start ===");
+    	replay.replay();
+    	System.out.println("=== Replay End ===");
 
     }
 
