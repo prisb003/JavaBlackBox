@@ -35,4 +35,8 @@ public abstract class AbstractEvent  implements Event {
     public EventCategory getCategory() {
     	return this.category;
     }
+    @Override
+    public String toString() {
+		return getName() + "{id=" + getId() + ", timestamp=" + getTimeStamp() + ", category=" + getCategory() + "}";
+    }
 }
